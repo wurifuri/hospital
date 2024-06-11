@@ -7,13 +7,7 @@ import org.springframework.boot.test.context.SpringBootTest;
 
 @SpringBootTest
 class HospitalManagerApplicationTests {
-    @Autowired
-   private UserMapper userMapper;
 
-    @Test
-    public void testGet(){
-        Admin admin = userMapper.get(1);
-        System.out.println(admin);
-    }
+
 
 }
