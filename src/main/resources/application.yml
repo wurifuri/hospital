@@ -9,7 +9,7 @@ spring:
   password: lijinshan3344
 
 mybatis-plus:
- mapper-locations: classpath*:mybatis/*.xml
+ mapper-locations: classpath:mybatis/*.xml
  configuration:
   map-underscore-to-camel-case: true
 
