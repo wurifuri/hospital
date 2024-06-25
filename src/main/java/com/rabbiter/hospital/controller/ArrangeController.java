@@ -25,8 +25,10 @@ public class ArrangeController {
      */
     @RequestMapping("addArrange")
     public ResponseData addArrange(Arrange arrange){
-        if (this.arrangeService.addArrange(arrange))
+        if (this.arrangeService.addArrange(arrange)){
+
             return ResponseData.success("增加排班信息成功");
+        }
         return ResponseData.fail("该医生该日已排班");
     }
 
@@ -35,8 +37,10 @@ public class ArrangeController {
      */
     @RequestMapping("deleteArrange")
     public ResponseData deleteArrange(String arId){
-        if (this.arrangeService.deleteArrange(arId))
+        if (this.arrangeService.deleteArrange(arId)){
+
             return ResponseData.success("删除排班信息成功");
+        }
         return ResponseData.fail("排班信息不存在");
     }
 
