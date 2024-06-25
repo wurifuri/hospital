@@ -20,8 +20,10 @@ public class OrderController {
     @PostMapping("updateOrder")
     @ResponseBody
     public ResponseData updateOrder(@RequestBody Orders orders) {
-        if (this.orderService.updateOrder(orders))
+        if (this.orderService.updateOrder(orders)){
+
             return ResponseData.success("更新挂号信息成功");
+        }
 
         return ResponseData.fail("更新挂号信息失败！");
     }
@@ -30,8 +32,10 @@ public class OrderController {
      */
     @RequestMapping("updatePrice")
     public ResponseData updatePrice(int oId){
-        if (this.orderService.updatePrice(oId))
-        return ResponseData.success("根据id设置缴费状态成功");
+        if (this.orderService.updatePrice(oId)){
+
+            return ResponseData.success("根据id设置缴费状态成功");
+        }
         return ResponseData.success("根据id设置缴费状态失败");
     }
     /**
@@ -91,8 +95,10 @@ public class OrderController {
     @PostMapping("updateOrderByAdd")
     @ResponseBody
     public ResponseData updateOrderByAdd(@RequestBody Orders order){
-        if (this.orderService.updateOrderByAdd(order))
+        if (this.orderService.updateOrderByAdd(order)){
+
             return ResponseData.success("增加诊断及医生意见成功");
+        }
         return ResponseData.fail("增加诊断及医生意见失败");
     }
     /**
@@ -100,8 +106,10 @@ public class OrderController {
      */
     @RequestMapping("findTotalPrice")
     public ResponseData findTotalPrice(int oId){
-       if(this.orderService.findTotalPrice(oId))
+       if(this.orderService.findTotalPrice(oId)){
+
            return ResponseData.success("未缴费");
+       }
        return ResponseData.fail("无需缴费");
     }
     /**

@@ -72,8 +72,9 @@ public class DoctorController {
      */
     @RequestMapping("updateStar")
     public ResponseData updateStar(int dId, Double dStar){
-        if(this.doctorService.updateStar(dId, dStar))
+        if(this.doctorService.updateStar(dId, dStar)){
             return ResponseData.success("评价成功");
+        }
         return ResponseData.fail("评价失败");
     }
     /**
@@ -82,8 +83,10 @@ public class DoctorController {
     @RequestMapping(value = "uploadExcel", method = RequestMethod.POST)
     @ResponseBody
     public ResponseData uploadExcel(@RequestParam("file") MultipartFile multipartFile) throws Exception {
-        if (this.doctorService.uploadExcel(multipartFile))
-        return ResponseData.success("上传Excel导入数据成功");
+        if (this.doctorService.uploadExcel(multipartFile)){
+
+            return ResponseData.success("上传Excel导入数据成功");
+        }
         return ResponseData.fail("上传Excel导入数据失败");
 
     }
@@ -92,8 +95,9 @@ public class DoctorController {
      */
     @RequestMapping("downloadExcel")
     public ResponseData downloadExcel(HttpServletResponse response) throws IOException {
-        if (this.doctorService.downloadExcel(response))
-        return ResponseData.success("Excel导出数据成功");
+        if (this.doctorService.downloadExcel(response)){
+            return ResponseData.success("Excel导出数据成功");
+        }
         return ResponseData.fail("Excel导出数据失败");
     }
 }
